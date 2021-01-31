@@ -25,7 +25,6 @@
             env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: "/tmp/jenkins-test-project.json"
-            env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
           volumes:
