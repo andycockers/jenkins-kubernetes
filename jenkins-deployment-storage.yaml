@@ -19,15 +19,16 @@
             ports:
             - containerPort: 8080
             volumeMounts:
-              - name: jenkins-home
-                mountPath: /var/jenkins_home
+            - mountPath: /tmp
+              name: volume-0
+              readOnly: false  
             env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: "/var/jenkins_home/sa.json"
+              value: "/tmp/jenkins-test-project.json"
             env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
           volumes:
-            - name: jenkins-home
-              hostPath:
-                path: /data/jenkins_home
+          - hostPath:
+              path: /tmp
+            name: volume-0
