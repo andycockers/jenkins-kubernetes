@@ -26,8 +26,8 @@
               name: jenkins-home
               
             env:
-          - name: GOOGLE_APPLICATION_CREDENTIALS 
-            value: /jenkins/jenkins-test-project.json
+            - name: GOOGLE_APPLICATION_CREDENTIALS 
+              value: /jenkins/jenkins-test-project.json
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
           volumes:
