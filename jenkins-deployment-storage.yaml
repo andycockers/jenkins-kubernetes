@@ -15,7 +15,7 @@
         spec:
           containers:
           - name: jenkins
-            image: wolfman.crabdance.com/jenkins-arm:2.277
+            image: wolfman.crabdance.com/jenkins-arm64-2.263.4
             ports:
             - containerPort: 8080
             volumeMounts: 
