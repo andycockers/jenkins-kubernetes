@@ -16,6 +16,8 @@ spec:
     http:
       paths:
       - path: /
-        defaultBackend:
-          service.name: jenkins
-          service.port.number: 8080
+        backend:
+         service:
+          name: jenkins
+          port:
+           number: 8080
