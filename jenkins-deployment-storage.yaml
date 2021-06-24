@@ -4,6 +4,9 @@
     metadata:
       name: jenkins
     spec:
+      securityContext:
+       fsGroup: 1000 
+       runAsUser: 0
       replicas: 1
       selector:
         matchLabels:
