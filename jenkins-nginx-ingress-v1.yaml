@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-jenkins
@@ -9,13 +9,16 @@ metadata:
 spec:
   tls:
   - hosts:
-    - wolfman.crabdance.com
+    - dracula.crabdance.com
     secretName: jenkins-tls
   rules:
-  - host: wolfman.crabdance.com
+  - host: dracula.crabdance.com
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: jenkins
-          servicePort: 8080
+         service:
+          name: jenkins
+          port:
+           number: 8080
