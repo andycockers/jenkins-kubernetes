@@ -30,6 +30,8 @@
               value: /jenkins/jenkins-test-project.json
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
+            - name: MASTER_GLOBAL_JAVA_OPTIONS
+              value: -Dorg.csanchez.jenkins.plugins.kubernetes.pipeline.PodTemplateStepExecution.defaultImage=calmmopey/jenkins-inbound-agent-arm7
           volumes:
           - name: jenkins-serviceaccount
             secret:
