@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - cockerilla.plus.com-jenkins
+    - dracula.crabdance.com
     secretName: jenkins-tls
   rules:
-  - host: cockerilla.plus.com-jenkins
+  - host: dracula.crabdance.com
     http:
       paths:
       - path: /
