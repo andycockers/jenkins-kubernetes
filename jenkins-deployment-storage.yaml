@@ -15,7 +15,7 @@
         spec:
           containers:
           - name: jenkins
-            image: calmmopey/jenkins-arm64:2.289.1
+            image: calmmopey/jenkins-arm64:2.289.2
             ports:
             - containerPort: 8080
             volumeMounts: 
