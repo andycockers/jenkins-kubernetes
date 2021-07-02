@@ -9,13 +9,13 @@ metadata:
 spec:
   tls:
   - hosts:
-    - cockerilla.plus.com/jenkins
+    - cockerilla.plus.com
     secretName: jenkins-tls
   rules:
-  - host: cockerilla.plus.com/jenkins
+  - host: cockerilla.plus.com
     http:
       paths:
-      - path: /
+      - path: /jenkins
         pathType: ImplementationSpecific
         backend:
          service:
