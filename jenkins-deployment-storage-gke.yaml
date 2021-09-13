@@ -13,6 +13,7 @@
           labels:
             app: jenkins
         spec:
+          serviceAccountName: secret-manager
           securityContext:
             fsGroup: 1000 
             runAsUser: 0
