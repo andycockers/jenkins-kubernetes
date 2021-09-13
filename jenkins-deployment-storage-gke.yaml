@@ -23,13 +23,13 @@
             - containerPort: 8080
             volumeMounts: 
             - mountPath: /var/jenkins_home
-              name: pvc-a5e70e13-84a9-498a-a7b6-ea10fd4c43eb
+              name: pvc-14319c16-e512-4531-a513-7d5525bf0bb3
               
             env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
           volumes:
-          - name: pvc-a5e70e13-84a9-498a-a7b6-ea10fd4c43eb
+          - name: pvc-14319c16-e512-4531-a513-7d5525bf0bb3
             persistentVolumeClaim:
               claimName: jenkins-pvc
               
