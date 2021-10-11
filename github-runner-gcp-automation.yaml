@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: github-runner
-        image: calmmopey/github-runner-debian:arm64
+        image: calmmopey/github-runner-worker:arm64
         env:
         - name: GITHUB_OWNER
           value: andycockers
@@ -27,3 +27,10 @@ spec:
             secretKeyRef:
               name: github-pat
               key: pat
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-sock
+      volumes:
+      - name: docker-sock
+        hostPath:
+          path: /var/run/docker.sock
