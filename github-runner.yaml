@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: github-runner
-        image: calmmopey/github-runner-worker:arm64
+        image: calmmopey/github-runner-terratest:arm64
         env:
         - name: GITHUB_OWNER
           value: andycockers
