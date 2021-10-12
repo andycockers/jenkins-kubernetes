@@ -14,10 +14,17 @@ spec:
       labels:
         app: github-runner-gcp-automation-dind
     spec:
+      volumes:
+      - name: docker-sock
+        hostPath:
+          path: /var/run/docker.sock
       containers:
       - name: github-runner-gcp-automation
-        image: calmmopey/github-runner-debian:arm64
+        image: calmmopey/github-runner-ubuntu:arm64
         tty: true
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-sock
         env:
         - name: GITHUB_OWNER
           value: andycockers
@@ -28,15 +35,4 @@ spec:
             secretKeyRef:
               name: github-pat
               key: pat
-      - name: docker
-        image: docker
-        tty: true
-        volumeMounts:
-        - mountPath: /var/run/docker.sock
-          name: docker-sock
-        securityContext:
-          privileged: true
-      volumes:
-      - name: docker-sock
-        hostPath:
-          path: /var/run/docker.sock
+      
