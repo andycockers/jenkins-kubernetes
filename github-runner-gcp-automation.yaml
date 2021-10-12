@@ -17,6 +17,9 @@ spec:
       containers:
       - name: github-runner-gcp-automation
         image: calmmopey/github-runner-worker:arm64
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-sock
         env:
         - name: GITHUB_OWNER
           value: andycockers
@@ -27,9 +30,6 @@ spec:
             secretKeyRef:
               name: github-pat
               key: pat
-          volumeMounts:
-          - mountPath: /var/run/docker.sock
-            name: docker-sock
       volumes:
       - name: docker-sock
         hostPath:
