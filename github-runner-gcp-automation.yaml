@@ -17,8 +17,6 @@ spec:
       containers:
       - name: github-runner-gcp-automation
         image: calmmopey/github-runner-worker:arm64
-        command:
-        - cat
         tty: true
         volumeMounts:
         - mountPath: /var/run/docker.sock
