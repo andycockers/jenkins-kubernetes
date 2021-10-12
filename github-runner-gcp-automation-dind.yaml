@@ -17,7 +17,6 @@ spec:
       containers:
       - name: github-runner-gcp-automation
         image: calmmopey/github-runner-ubuntu:arm64
-        tty: true
         securityContext:
           privileged: true
         env:
