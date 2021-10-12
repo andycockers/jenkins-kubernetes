@@ -22,6 +22,8 @@ spec:
       - name: github-runner-gcp-automation
         image: calmmopey/github-runner-ubuntu:arm64
         tty: true
+        securityContext:
+          privileged: true
         volumeMounts:
         - mountPath: /var/run/docker.sock
           name: docker-sock
