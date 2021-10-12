@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: github-runner-gcp-automation
-        image: calmmopey/calmmopey/github-runner-debian:arm64
+        image: calmmopey/github-runner-debian:arm64
         tty: true
         env:
         - name: GITHUB_OWNER
