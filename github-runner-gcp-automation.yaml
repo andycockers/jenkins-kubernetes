@@ -21,6 +21,8 @@ spec:
         volumeMounts:
         - mountPath: /var/run/docker.sock
           name: docker-sock
+        securityContext:
+          privileged: true
         env:
         - name: GITHUB_OWNER
           value: andycockers
@@ -35,3 +37,4 @@ spec:
       - name: docker-sock
         hostPath:
           path: /var/run/docker.sock
+          type: File
