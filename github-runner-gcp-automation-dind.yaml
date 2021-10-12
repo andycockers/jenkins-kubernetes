@@ -30,6 +30,7 @@ spec:
               key: pat
       - name: docker
         image: docker
+        tty: true
         volumeMounts:
         - mountPath: /var/run/docker.sock
           name: docker-sock
