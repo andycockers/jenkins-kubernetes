@@ -1,0 +1,47 @@
+---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: jenkins
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: jenkins
+      template:
+        metadata:
+          labels:
+            app: jenkins
+        spec:
+          containers:
+          - name: jenkins
+            image: calmmopey/jenkins-amd64-gcsfuse
+            securityContext:
+              privileged: true
+              capabilities:
+                add:
+                  - SYS_ADMIN
+            ports:
+            - containerPort: 8080
+            volumeMounts: 
+            - name: jenkins-serviceaccount
+              mountPath: "/jenkins" 
+              readOnly: true
+              
+            env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS 
+              value: /jenkins/jenkins-test-project.json
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+            lifecycle:
+              postStart:
+                exec:
+                  command: ["gcsfuse", "-o", "nonempty", "ceren-anoop", "/var/jenkins_home"]
+              preStop:
+                exec:
+                  command: ["fusermount", "-u", "/var/jenkins_home"]
+          volumes:
+          - name: jenkins-serviceaccount
+            secret:
+              secretName: jenkins-serviceaccount
+              
