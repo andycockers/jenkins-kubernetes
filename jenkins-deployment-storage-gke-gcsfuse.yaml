@@ -36,7 +36,7 @@
             lifecycle:
               postStart:
                 exec:
-                  command: ["mount", "-t", "gcsfuse", "-o", "rw,jenkins", "ceren-anoop", "/var/jenkins_home"]
+                  command: ["gcsfuse", "-o", "nonempty", "ceren-anoop", "/var/jenkins_home"]
               preStop:
                 exec:
                   command: ["fusermount", "-u", "/var/jenkins_home"]
