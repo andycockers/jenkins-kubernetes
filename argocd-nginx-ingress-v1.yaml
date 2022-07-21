@@ -10,10 +10,6 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
-  tls:
-  - hosts:
-    - argocd.crabdance.com
-    secretName: argocd-tls
   rules:
   - host: argocd.crabdance.com
     http:
