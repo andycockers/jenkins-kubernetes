@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blane.chickenkiller.com
+    - wolfman.crabdance.com
     secretName: jenkins-tls
   rules:
-  - host: blane.chickenkiller.com
+  - host: wolfman.crabdance.com
     http:
       paths:
       - path: /
