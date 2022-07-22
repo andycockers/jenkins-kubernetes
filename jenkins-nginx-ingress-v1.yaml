@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blane.chickenkiller.com
+    - blane.mooo.com
     secretName: jenkins-tls
   rules:
-  - host: blane.chickenkiller.com
+  - host: blane.mooo.com
     http:
       paths:
       - path: /
