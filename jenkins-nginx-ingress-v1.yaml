@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - dracula.crabdance.com
+    - wolfman.crabdance.com
     secretName: jenkins-tls
   rules:
-  - host: dracula.crabdance.com
+  - host: wolfman.crabdance.com
     http:
       paths:
       - path: /
